@@ -19,7 +19,7 @@
             <span class="text-red-500 text-xs">{{ $message }}</span>
         @enderror
 
-        <input class="block rounded border border-gray-100 px-3 py-1 mt-1" wire:model='email' type="email"
+        <input class="block rounded bo rder border-gray-100 px-3 py-1 mt-1" wire:model='email' type="email"
             placeholder="email">
 
         @error('name')
@@ -40,9 +40,15 @@
     <hr>
 
     @foreach ($users as $user)
-        <p>Name: {{ $user->name }}
+        <p>ID: {{ $user->id }}
+            <br>
+            Name: {{ $user->name }}
             <br>
             Email: {{ $user->email }}
         </p>
     @endforeach
+
+    <div>
+        {{ $users->links('vendor.livewire.test') }}
+    </div>
 </div>
