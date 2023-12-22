@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\User;
-use Illuminate\Http\Client\Request;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -25,6 +24,10 @@ class Clicker extends Component
             'email' => $this->email,
             'password'=> bcrypt($this->password),
         ]);
+
+        $this->reset(['name', 'email', 'password']);
+
+        request()->session()->flash('success','User Created!');
     }
 
     public function render()
