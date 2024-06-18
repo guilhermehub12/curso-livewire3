@@ -51,4 +51,6 @@
     <div>
         {{ $users->links('vendor.livewire.test') }}
     </div>
+
+    <a href="/register">Go to Register Form</a>
 </div>
